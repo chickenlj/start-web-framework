@@ -11,12 +11,12 @@ vars:
 resources:
   framework:
     component: fc3
-    actions:
-      pre-deploy:
-        - run: mkdir python
-          path: ./code
-        - run: pip install -r requirements.txt -t ./python
-          path: ./code
+    # actions:
+    #   pre-deploy:
+    #     - run: mkdir python
+    #       path: ./code
+    #     - run: pip install -r requirements.txt -t ./python
+    #       path: ./code
     props:
       timeout: 60
       cpu: 1

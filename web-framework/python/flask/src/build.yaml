@@ -1,0 +1,6 @@
+framework:
+  builder: default
+  languages:
+    - python3.10
+  command: mkdir python && pip install -r requirements.txt -t ./python
+  workDir: ./code
