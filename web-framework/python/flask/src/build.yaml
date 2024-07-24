@@ -1,6 +1,9 @@
 framework:
-  builder: default
-  languages:
-    - python3.10
-  command: mkdir python && pip install -r requirements.txt -t ./python
-  workDir: ./code
+  defaultBuilder:
+    languages:
+      - python3.10
+    steps:
+      - run: mkdir python
+        path: ./code
+      - run: pip install -r requirements.txt -t ./python
+        path: ./code
