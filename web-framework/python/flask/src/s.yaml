@@ -8,6 +8,7 @@ name: flask-app
 access: "{{ access }}"
 vars:
   region: "{{ region }}"
+  functionName: "{{ functionName }}"
 resources:
   framework:
     component: fc3
@@ -35,7 +36,7 @@ resources:
         PATH: /var/fc/lang/python3.10/bin:/usr/local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/local/ruby/bin:/opt/bin:/code:/code/bin
         PYTHONPATH: /opt/python:/code/python:/code
         TZ: Asia/Shanghai
-      functionName: "{{ functionName }}"
+      functionName: ${vars.functionName}
       code: ./code
       layers:
         - acs:fc:${this.props.region}:official:layers/Python3-Flask2x/versions/2
@@ -59,4 +60,4 @@ resources:
       routeConfig:
         routes:
           - path: /*
-            functionName: ${resources.framework.props.functionName}
+            functionName: ${vars.functionName}
