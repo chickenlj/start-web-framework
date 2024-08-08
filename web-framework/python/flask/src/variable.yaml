@@ -1,0 +1,12 @@
+services: #服务变量
+  fc-flask: 
+    chat_api_url:
+      title: chat_api_url
+      type: string
+      default: 'https://api.openai.com/v1'
+      description: chat api 服务的 url
+    chat_api_token:
+      title: chat_api_token
+      type: string
+      sensitive: true
+      description: chat api 服务的 token

@@ -9,15 +9,10 @@ access: "{{ access }}"
 vars:
   region: "{{ region }}"
   functionName: "{{ functionName }}"
+
 resources:
-  framework:
-    component: fc3
-    # actions:
-    #   pre-deploy:
-    #     - run: mkdir python
-    #       path: ./code
-    #     - run: pip install -r requirements.txt -t ./python
-    #       path: ./code
+  fc-flask:
+    component: fc3@dev
     props:
       timeout: 60
       cpu: 1
@@ -36,6 +31,8 @@ resources:
         PATH: /var/fc/lang/python3.10/bin:/usr/local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/local/ruby/bin:/opt/bin:/code:/code/bin
         PYTHONPATH: /opt/python:/code/python:/code
         TZ: Asia/Shanghai
+        CHAT_API_URL: '{{ chat_api_url }}'
+        CHAT_API_TOKEN: '{{ chat_api_token }}'
       functionName: ${vars.functionName}
       code: ./code
       layers:
@@ -50,14 +47,9 @@ resources:
               - PUT
               - DELETE
             authType: anonymous
-
-  fc3_domain_0:
-    component: fc3-domain
-    props:
-      region: ${vars.region}
-      domainName: "{{ domainName }}"
-      protocol: HTTP
-      routeConfig:
-        routes:
-          - path: /*
-            functionName: ${vars.functionName}
+      customDomain:
+        domainName: "{{ domainName }}"
+        protocol: HTTP
+        route:
+          path: /*
+          qualifier: LATEST
