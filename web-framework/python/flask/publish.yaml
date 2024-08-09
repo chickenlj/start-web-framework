@@ -63,3 +63,15 @@ Parameters:
       description: 函数计算自定义域名， 如果为 auto，则会下发一个一定有效期的仅支持 http 临时测试域名(切莫用于生产)
       required: false
       x-domain: true
+
+    chat_api_url:
+      title: chat_api_url
+      type: string
+      default: 'https://api.openai.com/v1'
+      description: chat api 服务的 url
+
+    chat_api_token:
+      title: chat_api_token
+      type: string
+      sensitive: true
+      description: chat api 服务的 token

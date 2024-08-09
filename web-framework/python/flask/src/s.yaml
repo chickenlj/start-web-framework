@@ -12,7 +12,7 @@ vars:
 
 resources:
   fc-flask:
-    component: fc3@dev
+    component: fc3
     props:
       timeout: 60
       cpu: 1
