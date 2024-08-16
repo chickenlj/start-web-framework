@@ -1,9 +1,9 @@
 Edition: 3.0.0
 Type: Project
-Name: start-fc-flask
+Name: start-dipper-flask
 Provider:
   - 阿里云
-Version: 0.0.7
+Version: 0.0.1
 Description: 本案例将Flask框架，这一非常受欢迎的Python Web框架，快捷创建并部署到阿里云函数计算 FC。
 HomePage: https://github.com/devsapp/start-web-framework
 Organization: 阿里云函数计算（FC）
@@ -22,6 +22,8 @@ Parameters:
   required: # 必填项
     - region
     - functionName
+    - chat_api_url
+    - chat_api_token
   properties:
     region:
       title: 地域

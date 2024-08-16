@@ -13,6 +13,11 @@ vars:
 resources:
   fc-flask:
     component: fc3
+    actions:
+      complete-deploy:
+        - plugin: flow_api_registry@dev
+      complete-remove:
+        - plugin: flow_api_registry@dev
     props:
       timeout: 60
       cpu: 1
