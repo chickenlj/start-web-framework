@@ -3,8 +3,7 @@ name: auto try publish all
 on:
   push:
     branches:
-      - master
-      - V3
+      - dipper
 env:
   REGISTRY_TOKEN:  ${{secrets.ALIBABA_REGISTRY_V3_PUBLISH_TOKEN}} 
 
@@ -12,7 +11,7 @@ jobs:
   auto-publish:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v4
       - uses: actions/setup-node@v2
         with:
           node-version: 16

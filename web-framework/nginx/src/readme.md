@@ -51,17 +51,11 @@
 
 <appcenter>
    
-- :fire: 通过 [Serverless 应用中心](https://fcnext.console.aliyun.com/applications/create?template=start-nginx-dipper) ，
-  [![Deploy with Severless Devs](https://img.alicdn.com/imgextra/i1/O1CN01w5RFbX1v45s8TIXPz_!!6000000006118-55-tps-95-28.svg)](https://fcnext.console.aliyun.com/applications/create?template=start-nginx-dipper) 该应用。
+:fire: 通过 [Dipper 应用中心](https://devs.console.aliyun.com/applications/createtemplate=start-nginx-dipper) ，[![Deploy with Severless Devs](https://img.alicdn.com/imgextra/i1/O1CN01w5RFbX1v45s8TIXPz_!!6000000006118-55-tps-95-28.svg)](https://devs.console.aliyun.com/applications/createtemplate=start-nginx-dipper) 该应用。
    
 </appcenter>
 <deploy>
-    
-- 通过 [Serverless Devs Cli](https://docs.serverless-devs.com/user-guide/install) 进行部署：
-  - [安装 Serverless Devs Cli 开发者工具](https://docs.serverless-devs.com/user-guide/install) ，并进行[授权信息配置]( https://docs.serverless-devs.com/user-guide/config) ；
-  - 初始化项目：`s init start-nginx-dipper -d start-nginx-dipper`
-  - 进入项目，并进行项目部署：`cd start-nginx-dipper && s deploy -y`
-   
+
 </deploy>
 
 ## 案例介绍
