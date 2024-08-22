@@ -8,7 +8,6 @@ name: springboot-app
 access: '{{ access }}'
 vars: 
   region: '{{ region }}'
-  functionName: '{{ functionName }}'
 
 resources:
   start_springboot:
@@ -18,8 +17,8 @@ resources:
         - run: mvn package -DskipTests
           path: ./code
     props:
-      region: ${vars.region} #
-      description: Serverless Devs Web Framework Function
+      region: ${vars.region}
+      description: Dipper springboot function
       runtime: custom
       cpu: 1
       memorySize: 2048
@@ -27,8 +26,12 @@ resources:
       instanceConcurrency: 100
       customRuntimeConfig:
         command:
-          - ./bootstrap
-      functionName: ${vars.functionName}
+          - java 
+        args:
+          - -Dserver.port=9000 
+          - -jar 
+          - target/webframework.jar
+      functionName: '{{ functionName }}'
       code: ./code
       triggers:
         - triggerName: httpTrigger
@@ -40,14 +43,9 @@ resources:
               - PUT
               - DELETE
             authType: anonymous
-
-  fc3_domain_0:
-    component: fc3-domain
-    props:
-      region: ${vars.region}
-      domainName: auto
-      protocol: HTTP
-      routeConfig:
-        routes:
-          - path: /*
-            functionName: ${vars.functionName}
+      customDomain:
+        domainName: auto
+        protocol: HTTP
+        route:
+          path: /*
+          qualifier: LATEST

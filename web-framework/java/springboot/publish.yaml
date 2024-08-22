@@ -1,11 +1,11 @@
 Edition: 3.0.0
 Type: Project
-Name: start-springboot-v3
+Name: start-springboot-dipper
 Provider:
   - 阿里云
-Version: 0.0.16
+Version: dev
 Description: 本案例是基于Pivotal团队提供的全新的Spring Boot框架，简化Spring应用的初始化搭建过程，并且快速部署到阿里云函数计算FC。
-HomePage: https://github.com/devsapp/start-web-framework
+HomePage: https://github.com/devsapp/start-web-framework/tree/dipper/web-framework/java/springboot
 Organization: 阿里云函数计算（FC）
 Effective: Public
 Tags:

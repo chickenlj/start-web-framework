@@ -1,13 +1,13 @@
 Edition: 3.0.0
 Type: Project
-Name: start-nginx-v3
-Version: 0.0.15
+Name: start-nginx-dipper
+Version: dev
 Provider:
   - 阿里云
 Description: 本案例快速部署一个 Nginx 项目到阿里云函数计算 FC。
 Organization: 阿里云函数计算（FC）
 Effective: Public
-HomePage: https://github.com/devsapp/start-web-framework
+HomePage: https://github.com/devsapp/start-web-framework/tree/dipper/web-framework/nginx
 Tags:
   - Web框架
   - nginx
