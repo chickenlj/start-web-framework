@@ -1,4 +1,4 @@
-start_fastapi:
+start_django:
   defaultBuilder:
     languages:
       - python3.10

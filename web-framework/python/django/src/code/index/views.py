@@ -1,33 +1,31 @@
-from django.shortcuts import render, HttpResponse
-
-
-# Create your views here.
-
+from django.http import JsonResponse
+import json
+import arrow
 
 # Create your views here.
 def index(request):
-    return HttpResponse('''<html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-    <title>Serverless Devs - Powered By Serverless Devs</title>
-    <link href="https://example-static.oss-cn-beijing.aliyuncs.com/web-framework/style.css" rel="stylesheet" type="text/css"/>
-</head>
-<body>
-<div class="website">
-    <div class="ri-t">
-        <h1>Devsapp</h1>
-        <h2>这是一个 Django 项目</h2>
-        <span>自豪地通过Serverless Devs进行部署</span>
-        <br/>
-        <p>您也可以快速体验： <br/>
-            • 下载Serverless Devs工具：npm install @serverless-devs/s<br/>
-            • 初始化项目：s init start-django-v3<br/>
+    body_str = request.body.decode('utf-8')
+    response_content = {
+        "msg": "Hello, World!" + " at " + arrow.now().format("YYYY-MM-DD HH:mm:ss"),
+        "request": {
+            "query": dict(request.GET),
+            "path": "",
+            "data": body_str,
+            "clientIp": request.META.get('REMOTE_ADDR'),
+        },
+    }
+    return JsonResponse(response_content)
 
-            • 项目部署：s deploy<br/>
-            <br/>
-            Serverless Devs 钉钉交流群：33947367
-        </p>
-    </div>
-</div>
-</body>
-</html>''')
+
+def default(request, path):
+    body_str = request.body.decode('utf-8')
+    response_content = {
+        "msg": "Hello, World!" + " at " + arrow.now().format("YYYY-MM-DD HH:mm:ss"),
+        "request": {
+            "query": dict(request.GET),
+            "path": path,
+            "data": body_str,
+            "clientIp": request.META.get('REMOTE_ADDR'),
+        },
+    }
+    return JsonResponse(response_content)
