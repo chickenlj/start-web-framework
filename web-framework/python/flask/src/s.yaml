@@ -15,9 +15,9 @@ resources:
     component: fc3
     actions:
       pre-deploy:
-        - run: mkdir python
+        - run: mkdir -p python
           path: ./code
-        - run: pip install -r requirements.txt -t ./python
+        - run: export PATH=/usr/local/envs/py310/bin:$PATH && pip install -r requirements.txt -t ./python
           path: ./code
     props:
       timeout: 60
@@ -39,6 +39,7 @@ resources:
         TZ: Asia/Shanghai
       functionName: "{{ functionName }}"
       code: ./code
+      logConfig: auto
       layers:
         - acs:fc:${this.props.region}:official:layers/Python3-Flask2x/versions/2
       triggers:

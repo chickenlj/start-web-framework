@@ -37,6 +37,7 @@ resources:
         port: 9000
       functionName: "{{ functionName }}"
       code: ./code
+      logConfig: auto
       triggers:
         - triggerName: httpTrigger
           triggerType: http

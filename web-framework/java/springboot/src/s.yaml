@@ -33,6 +33,7 @@ resources:
           - target/webframework.jar
       functionName: '{{ functionName }}'
       code: ./code
+      logConfig: auto
       triggers:
         - triggerName: httpTrigger
           triggerType: http

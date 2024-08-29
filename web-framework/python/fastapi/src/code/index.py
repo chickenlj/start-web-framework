@@ -1,41 +1,49 @@
-import uvicorn
-from fastapi import FastAPI
-from fastapi.responses import HTMLResponse
+from fastapi import FastAPI, Request
+from fastapi.responses import JSONResponse
+import arrow
+from starlette.middleware.cors import CORSMiddleware
+import json  # Import json for parsing JSON data
 
 app = FastAPI()
 
+# Add CORS middleware to allow cross-origin requests
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
-@app.get("/")
-async def hello():
-    return HTMLResponse(
-        """<html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-    <title>Serverless Devs - Powered By Serverless Devs</title>
-    <link href="https://example-static.oss-cn-beijing.aliyuncs.com/web-framework/style.css" rel="stylesheet" type="text/css"/>
-</head>
-<body>
-<div class="website">
-    <div class="ri-t">
-        <h1>Devsapp</h1>
-        <h2>这是一个 FastAPI 项目</h2>
-        <span>自豪地通过Serverless Devs进行部署</span>
-        <br/>
-        <p>您也可以快速体验： <br/>
-            • 下载Serverless Devs工具：npm install @serverless-devs/s<br/>
-            • 初始化项目：s init start-fastapi-v3<br/>
+@app.middleware("http")
+async def log_requests(request: Request, call_next):
+    requestId = request.headers.get("x-fc-request-id", "")
+    print("FC Invoke Start RequestId:", requestId)
+    
+    response = await call_next(request)
+    
+    print("FC Invoke End RequestId:", requestId)
+    return response
 
-            • 项目部署：s deploy<br/>
-            <br/>
-            Serverless Devs 钉钉交流群：33947367
-        </p>
-    </div>
-</div>
-</body>
-</html>
-"""
-    )
+@app.get("/{path:path}")
+@app.post("/{path:path}")
+@app.put("/{path:path}")
+@app.delete("/{path:path}")
+async def hello_world(path: str, request: Request):
+    body_bytes = await request.body()
+    body_str = body_bytes.decode('utf-8')
 
+    response_content = {
+        "msg": "Hello, World!" + " at " + arrow.now().format("YYYY-MM-DD HH:mm:ss"),
+        "request": {
+            "query": str(request.query_params),
+            "path": path,
+            "data": body_str,  # Use the decoded string here
+            "clientIp": request.headers.get("x-forwarded-for"),
+        },
+    }
+    return JSONResponse(response_content)
 
 if __name__ == "__main__":
+    import uvicorn
     uvicorn.run(app, host="0.0.0.0", port=9000)
