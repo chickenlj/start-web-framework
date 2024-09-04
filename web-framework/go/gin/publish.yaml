@@ -1,9 +1,9 @@
 Edition: 3.0.0
 Type: Project
-Name: start-gin-dipper
+Name: start-gin-cap
 Provider:
   - 阿里云
-Version: 0.0.2
+Version: 0.0.1
 Description: 本案例是将 Gin ，这一非常受欢迎的 web 框架，快速创建并部署到阿里云函数计算 FC 。
 HomePage: https://github.com/devsapp/start-web-framework/tree/dipper/web-framework/go/gin
 Organization: 阿里云函数计算（FC）

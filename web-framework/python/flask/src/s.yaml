@@ -9,7 +9,6 @@ access: "{{ access }}"
 vars:
   region: "{{ region }}"
 
-
 resources:
   start_flask:
     component: fc3
@@ -26,7 +25,7 @@ resources:
       diskSize: 512
       instanceConcurrency: 100
       region: ${vars.region}
-      description: Dipper flask function
+      description: flask function
       runtime: custom.debian10
       customRuntimeConfig:
         command:
@@ -46,12 +45,12 @@ resources:
         - triggerName: httpTrigger
           triggerType: http
           triggerConfig:
+            authType: anonymous
             methods:
               - GET
               - POST
               - PUT
               - DELETE
-            authType: anonymous
       customDomain:
         domainName: auto
         protocol: HTTP

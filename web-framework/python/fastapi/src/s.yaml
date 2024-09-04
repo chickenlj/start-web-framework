@@ -5,12 +5,12 @@
 
 edition: 3.0.0
 name: start-fastapi-app
-access: '{{ access }}'
-vars: 
-  region: '{{ region }}'
+access: "{{ access }}"
+vars:
+  region: "{{ region }}"
 
 resources:
-  start_fastapi: 
+  start_fastapi:
     component: fc3
     actions:
       pre-deploy:
@@ -18,9 +18,9 @@ resources:
           path: ./code
         - run: export PATH=/usr/local/envs/py310/bin:$PATH && pip install -r requirements.txt -t ./python
           path: ./code
-    props: 
-      region: ${vars.region} 
-      description: Dipper fastapi function
+    props:
+      region: ${vars.region}
+      description: fastapi function
       runtime: custom.debian10
       timeout: 60
       environmentVariables:
@@ -31,9 +31,9 @@ resources:
         command:
           - python3
         args:
-          - '-u'
+          - "-u"
           - index.py
-      functionName: '{{ functionName }}'
+      functionName: "{{ functionName }}"
       code: ./code
       logConfig: auto
       customDomain:

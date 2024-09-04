@@ -3,7 +3,6 @@ name: start-koa-app
 access: "{{ access }}"
 vars:
   region: "{{ region }}"
-  functionName: "{{ functionName }}"
 resources:
   start_koa:
     component: fc3
@@ -13,7 +12,7 @@ resources:
           path: ./code
     props:
       region: ${vars.region}
-      description: Serverless Devs Web Framework Function
+      description: Cloud Application Platform Function
       runtime: custom.debian10
       timeout: 60
       layers:
@@ -25,8 +24,9 @@ resources:
         command:
           - ./bootstrap
         port: 9000
-      functionName: ${vars.functionName}
+      functionName: "{{ functionName }}"
       code: ./code
+      logConfig: auto
       triggers:
         - triggerName: httpTrigger
           triggerType: http
@@ -34,13 +34,12 @@ resources:
             authType: anonymous
             methods:
               - GET
-  fc3_domain_0:
-    component: fc3-domain
-    props:
-      region: ${vars.region}
-      domainName: "{{ domainName }}"
-      protocol: HTTP
-      routeConfig:
-        routes:
-          - path: /*
-            functionName: ${vars.functionName}
+              - POST
+              - PUT
+              - DELETE
+      customDomain:
+        domainName: auto
+        protocol: HTTP
+        route:
+          path: /*
+          qualifier: LATEST

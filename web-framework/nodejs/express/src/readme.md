@@ -1,22 +1,13 @@
 
 > 注：当前项目为 Serverless Devs 应用，由于应用中会存在需要初始化才可运行的变量（例如应用部署地区、函数名等等），所以**不推荐**直接 Clone 本仓库到本地进行部署或直接复制 s.yaml 使用，**强烈推荐**通过 `s init ${模版名称}` 的方法或应用中心进行初始化，详情可参考[部署 & 体验](#部署--体验) 。
 
-# start-express-dipper 帮助文档
+# start-express-cap 帮助文档
 
 <description>
 
 本案例是将 Express 框架，这一基于 Node.js 平台的极简且灵活的 web 应用开发框架，快速创建并部署到阿里云函数计算 FC 。
 
 </description>
-
-<codeUrl>
-
-</codeUrl>
-<preview>
-
-
-
-</preview>
 
 
 ## 前期准备
@@ -49,12 +40,10 @@
 
 <appcenter>
    
-:fire: 通过 [Dipper 应用中心](https://devs.console.aliyun.com/applications/createtemplate=start-express-dipper) ，[![Deploy with Severless Devs](https://img.alicdn.com/imgextra/i1/O1CN01w5RFbX1v45s8TIXPz_!!6000000006118-55-tps-95-28.svg)](https://devs.console.aliyun.com/applications/createtemplate=start-express-dipper) 该应用。
+:fire: 通过 [云原生应用开发平台 CAP](https://devs.console.aliyun.com/applications/createtemplate=start-express-cap) ，[![Deploy with Severless Devs](https://img.alicdn.com/imgextra/i1/O1CN01w5RFbX1v45s8TIXPz_!!6000000006118-55-tps-95-28.svg)](https://devs.console.aliyun.com/applications/createtemplate=start-express-cap) 该应用。
    
 </appcenter>
-<deploy>
 
-</deploy>
 
 ## 案例介绍
 
@@ -68,7 +57,7 @@ Express 框架具有许多优点，提供了路由管理、中间件支持、模
 
 由于 Express 是基于 Node.js 的，因此它可以充分利用 Node.js 的非阻塞 I/O 模型和事件驱动机制，实现高性能的 web 应用。
 
-通过 Serverless 开发平台，您只需要几步，就可以体验 Express 框架，并享受 Serverless 架构带来的降本提效的技术红利。
+通过云原生应用开发平台 CAP，您只需要几步，就可以体验 Express 框架，并享受 Serverless 架构带来的降本提效的技术红利。
 
 </appdetail>
 
@@ -89,18 +78,3 @@ Express 框架具有许多优点，提供了路由管理、中间件支持、模
 <matters id="flushContent">
 </matters>
 
-
-<devgroup>
-
-
-## 开发者社区
-
-您如果有关于错误的反馈或者未来的期待，您可以在 [Serverless Devs repo Issues](https://github.com/serverless-devs/serverless-devs/issues) 中进行反馈和交流。如果您想要加入我们的讨论组或者了解 FC 组件的最新动态，您可以通过以下渠道进行：
-
-<p align="center">  
-
-| <img src="https://serverless-article-picture.oss-cn-hangzhou.aliyuncs.com/1635407298906_20211028074819117230.png" width="130px" > | <img src="https://serverless-article-picture.oss-cn-hangzhou.aliyuncs.com/1635407044136_20211028074404326599.png" width="130px" > | <img src="https://images.devsapp.cn/fc-faq/33947367.png" width="130px" > |
-| --------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------- |
-| <center>微信公众号：`serverless`</center>                                                                                         | <center>微信小助手：`xiaojiangwh`</center>                                                                                        | <center>钉钉交流群：`33947367`</center>                                                                                           |
-</p>
-</devgroup>

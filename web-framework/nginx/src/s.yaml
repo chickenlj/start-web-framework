@@ -14,7 +14,7 @@ resources:
     component: fc3
     props:
       region: ${vars.region}
-      description: Dipper nginx function
+      description: nginx function
       runtime: custom.debian10
       layers:
         - acs:fc:${vars.region}:official:layers/Nginx/versions/1
@@ -38,12 +38,12 @@ resources:
         - triggerName: httpTrigger
           triggerType: http
           triggerConfig:
+            authType: anonymous
             methods:
               - GET
               - POST
               - PUT
               - DELETE
-            authType: anonymous
       customDomain:
         domainName: auto
         protocol: HTTP

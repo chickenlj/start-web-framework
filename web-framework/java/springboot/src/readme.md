@@ -1,7 +1,7 @@
 
 > 注：当前项目为 Serverless Devs 应用，由于应用中会存在需要初始化才可运行的变量（例如应用部署地区、函数名等等），所以**不推荐**直接 Clone 本仓库到本地进行部署或直接复制 s.yaml 使用，**强烈推荐**通过 `s init ${模版名称}` 的方法或应用中心进行初始化，详情可参考[部署 & 体验](#部署--体验) 。
 
-# start-springboot-dipper 帮助文档
+# start-springboot-cap 帮助文档
 
 <description>
 
@@ -9,16 +9,7 @@
 
 </description>
 
-<codeUrl>
 
-
-
-</codeUrl>
-<preview>
-
-
-
-</preview>
 
 
 ## 前期准备
@@ -51,12 +42,9 @@
 
 <appcenter>
    
-:fire: 通过 [Dipper 应用中心](https://devs.console.aliyun.com/applications/createtemplate=start-springboot-dipper) ，[![Deploy with Severless Devs](https://img.alicdn.com/imgextra/i1/O1CN01w5RFbX1v45s8TIXPz_!!6000000006118-55-tps-95-28.svg)](https://devs.console.aliyun.com/applications/createtemplate=start-springboot-dipper) 该应用。
+:fire: 通过 [云原生应用开发平台 CAP](https://devs.console.aliyun.com/applications/createtemplate=start-springboot-cap) ，[![Deploy with Severless Devs](https://img.alicdn.com/imgextra/i1/O1CN01w5RFbX1v45s8TIXPz_!!6000000006118-55-tps-95-28.svg)](https://devs.console.aliyun.com/applications/createtemplate=start-springboot-cap) 该应用。
    
 </appcenter>
-<deploy>
-
-</deploy>
 
 ## 案例介绍
 
@@ -72,7 +60,7 @@ Spring Boot因其快速开发、微服务架构支持、易于管理和部署、
 
 Spring Boot适用的场景也非常广泛，如：Web应用程序开发、微服务架构、批处理和数据处理等。无论是简单的Web应用还是复杂的分布式系统，Spring Boot都能提供高效、稳定的开发支持，是Java开发者在构建企业级应用时的首选框架之一。
 
-通过 Serverless 开发平台，您只需要几步，就可以体验 Spring Boot 框架，并享受 Serverless 架构带来的降本提效的技术红利。
+通过云原生应用开发平台 CAP，您只需要几步，就可以体验 Spring Boot 框架，并享受 Serverless 架构带来的降本提效的技术红利。
 
 </appdetail>
 
@@ -95,18 +83,3 @@ Spring Boot适用的场景也非常广泛，如：Web应用程序开发、微服
 <matters id="flushContent">
 </matters>
 
-
-<devgroup>
-
-
-## 开发者社区
-
-您如果有关于错误的反馈或者未来的期待，您可以在 [Serverless Devs repo Issues](https://github.com/serverless-devs/serverless-devs/issues) 中进行反馈和交流。如果您想要加入我们的讨论组或者了解 FC 组件的最新动态，您可以通过以下渠道进行：
-
-<p align="center">  
-
-| <img src="https://serverless-article-picture.oss-cn-hangzhou.aliyuncs.com/1635407298906_20211028074819117230.png" width="130px" > | <img src="https://serverless-article-picture.oss-cn-hangzhou.aliyuncs.com/1635407044136_20211028074404326599.png" width="130px" > | <img src="https://images.devsapp.cn/fc-faq/33947367.png" width="130px" > |
-| --------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------- |
-| <center>微信公众号：`serverless`</center>                                                                                         | <center>微信小助手：`xiaojiangwh`</center>                                                                                        | <center>钉钉交流群：`33947367`</center>                                                                                           |
-</p>
-</devgroup>
