@@ -62,17 +62,15 @@
 
 <appdetail id="flushContent">
 
-本案例是基于 Pivotal 团队提供的全新的 Spring Boot 框架，简化 Spring 应用的初始化搭建过程，并且快速部署到阿里云函数计算FC。
+本案例将Flask框架，这一非常受欢迎的Python Web框架，快捷创建并部署到阿里云函数计算 FC。
 
-Spring Boot 是一个快速开发 Spring 框架应用的脚手架，它使用“习惯优于配置”（约定优于配置）的理念让你的项目快速运行起来。Spring Boot 并不是对 Spring 功能上的增强，而是提供了一种快速使用 Spring 的方式。
+Flask是一个使用 Python 编写的轻量级 Web 应用框架。其 WSGI 工具箱采用 Werkzeug ，模板引擎则使用 Jinja2 。Flask使用 BSD 授权。
 
-Spring Boot的流行程度非常高，主要得益于其快速开发、微服务架构支持、易于管理和部署、兼容性强以及社区支持等特点。Spring Boot天然支持微服务架构的特点使其成为了构建微服务的理想选择。通过Spring Boot，开发者可以轻松地将应用程序拆分成多个可独立部署和升级的小型服务，充分利用计算资源，提高系统的可扩展性和可维护性。
+该框架全网下载量超过四千万次，在github上获得了超过6w star，是最为主流的Python Web应用框架之一。
 
-Spring Boot因其快速开发、微服务架构支持、易于管理和部署、兼容性强以及社区支持等特点而备受欢迎，成为了当前最流行的Java Web开发框架之一。
+该框架特别适用于小型、简单的Web应用或API开发。对于这类项目，Flask的简洁性和易用性使得开发过程更加高效和快速。开发者可以利用Flask的核心组件快速搭建起项目的基本框架，并通过扩展库来增加额外的功能。
 
-Spring Boot适用的场景也非常广泛，如：Web应用程序开发、微服务架构、批处理和数据处理等。无论是简单的Web应用还是复杂的分布式系统，Spring Boot都能提供高效、稳定的开发支持，是Java开发者在构建企业级应用时的首选框架之一。
-
-通过 Serverless 开发平台，您只需要几步，就可以体验 Spring Boot 框架，并享受 Serverless 架构带来的降本提效的技术红利。
+通过 Serverless 开发平台，您只需要几步，就可以体验 Flask 框架，并享受Serverless 架构带来的降本提效的技术红利。
 
 </appdetail>
 
@@ -81,12 +79,9 @@ Spring Boot适用的场景也非常广泛，如：Web应用程序开发、微服
 <usedetail id="flushContent">
 
 ### 查看部署的案例
+本案例应用是一个非常简单的 Hello World 案例，部署完成之后，您可以看到系统返回给您的案例地址, 打开案例地址，就可以进入基于 flask 设置的首页：
 
-部署完成之后，您可以看到系统返回给您的案例地址
-
-此时，打开案例地址，就可以进入，如下图：
-
-![图片alt](https://img.alicdn.com/imgextra/i1/O1CN01rGURy61QCZLqBFEal_!!6000000001940-0-tps-1380-410.jpg)
+![图片alt](https://img.alicdn.com/imgextra/i1/O1CN01wlEjIY1MWwVhTwOwC_!!6000000001443-0-tps-1308-422.jpg)
 
 </usedetail>
 
