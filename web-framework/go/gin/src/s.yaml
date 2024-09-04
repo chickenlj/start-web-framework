@@ -1,8 +1,8 @@
 edition: 3.0.0
 name: start-gin-app
-access: '{{ access }}'
+access: "{{ access }}"
 vars:
-  region: '{{ region }}'
+  region: "{{ region }}"
 
 resources:
   start_gin:
@@ -15,7 +15,7 @@ resources:
           path: ./code
     props:
       region: ${vars.region}
-      description: Dipper gin function
+      description: gin function
       runtime: custom.debian10
       memorySize: 1024
       timeout: 30
@@ -24,7 +24,7 @@ resources:
         command:
           - /code/main
         port: 8080
-      functionName: '{{ functionName }}'
+      functionName: "{{ functionName }}"
       code: ./code/target
       logConfig: auto
       triggers:
@@ -37,8 +37,6 @@ resources:
               - POST
               - PUT
               - DELETE
-              - HEAD
-              - OPTIONS
       customDomain:
         domainName: auto
         protocol: HTTP

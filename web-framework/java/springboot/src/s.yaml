@@ -5,9 +5,9 @@
 
 edition: 3.0.0
 name: springboot-app
-access: '{{ access }}'
-vars: 
-  region: '{{ region }}'
+access: "{{ access }}"
+vars:
+  region: "{{ region }}"
 
 resources:
   start_springboot:
@@ -18,7 +18,7 @@ resources:
           path: ./code
     props:
       region: ${vars.region}
-      description: Dipper springboot function
+      description: springboot function
       runtime: custom
       cpu: 1
       memorySize: 2048
@@ -26,24 +26,24 @@ resources:
       instanceConcurrency: 100
       customRuntimeConfig:
         command:
-          - java 
+          - java
         args:
-          - -Dserver.port=9000 
-          - -jar 
+          - -Dserver.port=9000
+          - -jar
           - target/webframework.jar
-      functionName: '{{ functionName }}'
+      functionName: "{{ functionName }}"
       code: ./code
       logConfig: auto
       triggers:
         - triggerName: httpTrigger
           triggerType: http
           triggerConfig:
+            authType: anonymous
             methods:
               - GET
               - POST
               - PUT
               - DELETE
-            authType: anonymous
       customDomain:
         domainName: auto
         protocol: HTTP

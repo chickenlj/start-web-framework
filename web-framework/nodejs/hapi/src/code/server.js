@@ -1,4 +1,4 @@
-const Hapi = require('@hapi/hapi');
+const Hapi = require("@hapi/hapi");
 
 const homeView = (nodeVersion) => `<!DOCTYPE html>
 <html>
@@ -51,7 +51,7 @@ const homeView = (nodeVersion) => `<!DOCTYPE html>
                 <h3>步骤一. 准备工作</h3>
                 <p>具体步骤请参照 <a href="https://github.com/Serverless-Devs/Serverless-Devs/blob/master/docs/zh/install.md" target="_blank"> Serverless Cli 安装</a></p>
                 <h3>步骤二. 初始化应用示例</h3>
-                <pre>s init start-hapi-v3</pre>
+                <pre>s init start-hapi-cap</pre>
                 <h3>步骤三. 一键部署</h3>
                 <p>进入到项目目录，在命令行执行</p>
                 <pre>s deploy</pre>
@@ -90,38 +90,47 @@ const homeView = (nodeVersion) => `<!DOCTYPE html>
 
 </html>`;
 const server = Hapi.server({
-    host: '0.0.0.0', port: 9000
+  host: "0.0.0.0",
+  port: 9000,
 });
 
 const init = async () => {
-    server.route({
-        path: '/',
-        method: 'GET',
-        handler() {
-            const nodeVersion = require('child_process').execSync('node -v',).toString();
-            return homeView(nodeVersion);
-        }
-    });
-    await server.register([
-        { "plugin": require("@hapi/inert") },
-        { "plugin": require("@hapi/vision") },
-        { "plugin": require("hapi-swagger"), options: {
-          "pathPrefixSize": 2,
-          "basePath": "/webcore",
-          "info": {
-              "title": "Test API Documentation",
-              "version": "0.0.1",
-              "contact": {
-                  "name": "Alichs",
-                  "email": "yuntun_wp@alichs.com"
-              }
+  server.route({
+    path: "/",
+    method: "GET",
+    handler() {
+      const nodeVersion = require("child_process")
+        .execSync("node -v")
+        .toString();
+      return homeView(nodeVersion);
+    },
+  });
+  await server.register([
+    { plugin: require("@hapi/inert") },
+    { plugin: require("@hapi/vision") },
+    {
+      plugin: require("hapi-swagger"),
+      options: {
+        pathPrefixSize: 2,
+        basePath: "/webcore",
+        info: {
+          title: "Test API Documentation",
+          version: "0.0.1",
+          contact: {
+            name: "Alichs",
+            email: "yuntun_wp@alichs.com",
           },
-          "schemes": ["http"]
-        }},
-        { "plugin": require("./demo/default"), "options": { "prefix": "/webcore/default" } },
-    ]);
-    await server.start();
-    return server;
-}
+        },
+        schemes: ["http"],
+      },
+    },
+    {
+      plugin: require("./demo/default"),
+      options: { prefix: "/webcore/default" },
+    },
+  ]);
+  await server.start();
+  return server;
+};
 
-init()
+init();

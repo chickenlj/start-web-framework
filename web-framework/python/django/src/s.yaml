@@ -1,20 +1,20 @@
 edition: 3.0.0
 name: start-django-app
-access: '{{ access }}'
-vars: 
-  region: '{{ region }}'
+access: "{{ access }}"
+vars:
+  region: "{{ region }}"
 
 resources:
-  start_django: 
-    component: fc3 
-    actions: 
-      pre-deploy: 
+  start_django:
+    component: fc3
+    actions:
+      pre-deploy:
         - run: pip3 install -r requirements.txt -t .
           path: ./code
-    props: 
-      region: ${vars.region} 
-      functionName: '{{ functionName }}'
-      description: Dipper django function
+    props:
+      region: ${vars.region}
+      functionName: "{{ functionName }}"
+      description: django function
       runtime: custom.debian10
       customRuntimeConfig:
         command:

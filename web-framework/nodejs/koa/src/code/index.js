@@ -1,26 +1,26 @@
-const Koa = require('koa');
+const Koa = require("koa");
 const app = new Koa();
 
 // x-response-time
 app.use(async (ctx, next) => {
-    const start = Date.now();
-    await next();
-    const ms = Date.now() - start;
-    ctx.set('X-Response-Time', `${ms}ms`);
-    ctx.set('Content-Type', 'text/html;charset=utf-8');
+  const start = Date.now();
+  await next();
+  const ms = Date.now() - start;
+  ctx.set("X-Response-Time", `${ms}ms`);
+  ctx.set("Content-Type", "text/html;charset=utf-8");
 });
 
 // logger
 app.use(async (ctx, next) => {
-    const start = Date.now();
-    await next();
-    const ms = Date.now() - start;
-    console.log(`${ctx.method} ${ctx.url} - ${ms}`);
+  const start = Date.now();
+  await next();
+  const ms = Date.now() - start;
+  console.log(`${ctx.method} ${ctx.url} - ${ms}`);
 });
 
 // response
-app.use(async ctx => {
-    ctx.body = `<!DOCTYPE html>
+app.use(async (ctx) => {
+  ctx.body = `<!DOCTYPE html>
     <html>
     
     <head>
@@ -68,7 +68,7 @@ app.use(async ctx => {
                 <h3>步骤一. 准备工作</h3>
                 <p>具体步骤请参照 <a href="https://github.com/Serverless-Devs/Serverless-Devs/blob/master/docs/zh/install.md" target="_blank"> Serverless Cli 安装</a></p>
                 <h3>步骤二. 初始化应用示例</h3>
-                <pre>s init start-koa-v3</pre>
+                <pre>s init start-koa-cap</pre>
                 <h3>步骤三. 一键部署</h3>
                 <p>进入到项目目录，在命令行执行</p>
                 <pre>s deploy</pre>

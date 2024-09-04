@@ -1,7 +1,7 @@
 
 > 注：当前项目为 Serverless Devs 应用，由于应用中会存在需要初始化才可运行的变量（例如应用部署地区、函数名等等），所以**不推荐**直接 Clone 本仓库到本地进行部署或直接复制 s.yaml 使用，**强烈推荐**通过 `s init ${模版名称}` 的方法或应用中心进行初始化，详情可参考[部署 & 体验](#部署--体验) 。
 
-# start-nginx-dipper 帮助文档
+# start-nginx-cap 帮助文档
 
 <description>
 
@@ -9,16 +9,7 @@
 
 </description>
 
-<codeUrl>
 
-
-
-</codeUrl>
-<preview>
-
-
-
-</preview>
 
 
 ## 前期准备
@@ -51,12 +42,10 @@
 
 <appcenter>
    
-:fire: 通过 [Dipper 应用中心](https://devs.console.aliyun.com/applications/createtemplate=start-nginx-dipper) ，[![Deploy with Severless Devs](https://img.alicdn.com/imgextra/i1/O1CN01w5RFbX1v45s8TIXPz_!!6000000006118-55-tps-95-28.svg)](https://devs.console.aliyun.com/applications/createtemplate=start-nginx-dipper) 该应用。
+:fire: 通过 [云原生应用开发平台 CAP](https://devs.console.aliyun.com/applications/createtemplate=start-nginx-cap) ，[![Deploy with Severless Devs](https://img.alicdn.com/imgextra/i1/O1CN01w5RFbX1v45s8TIXPz_!!6000000006118-55-tps-95-28.svg)](https://devs.console.aliyun.com/applications/createtemplate=start-nginx-cap) 该应用。
    
 </appcenter>
-<deploy>
 
-</deploy>
 
 ## 案例介绍
 
@@ -68,7 +57,7 @@ Nginx的流行程度非常高，是全球范围内广泛使用的Web服务器和
 
 Nginx 是一个高性能的HTTP和反向代理服务器，也是一个IMAP/POP3/SMTP代理服务器。最初由俄罗斯人Igor Sysoev开发并公开源代码，供广大用户使用。其特点是占有内存少，并发能力强，事实上nginx的并发能力确实在同类型的网页服务器中表现较好。
 
-通过 Serverless 开发平台，您只需要几步，就可以体验 Nginx，并享受 Serverless 架构带来的降本提效的技术红利。
+通过云原生应用开发平台 CAP，您只需要几步，就可以体验 Nginx，并享受 Serverless 架构带来的降本提效的技术红利。
 
 </appdetail>
 
@@ -88,18 +77,3 @@ Nginx 是一个高性能的HTTP和反向代理服务器，也是一个IMAP/POP3/
 <matters id="flushContent">
 </matters>
 
-
-<devgroup>
-
-
-## 开发者社区
-
-您如果有关于错误的反馈或者未来的期待，您可以在 [Serverless Devs repo Issues](https://github.com/serverless-devs/serverless-devs/issues) 中进行反馈和交流。如果您想要加入我们的讨论组或者了解 FC 组件的最新动态，您可以通过以下渠道进行：
-
-<p align="center">  
-
-| <img src="https://serverless-article-picture.oss-cn-hangzhou.aliyuncs.com/1635407298906_20211028074819117230.png" width="130px" > | <img src="https://serverless-article-picture.oss-cn-hangzhou.aliyuncs.com/1635407044136_20211028074404326599.png" width="130px" > | <img src="https://images.devsapp.cn/fc-faq/33947367.png" width="130px" > |
-| --------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------- |
-| <center>微信公众号：`serverless`</center>                                                                                         | <center>微信小助手：`xiaojiangwh`</center>                                                                                        | <center>钉钉交流群：`33947367`</center>                                                                                           |
-</p>
-</devgroup>

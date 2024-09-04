@@ -1,18 +1,7 @@
 
 > 注：当前项目为 Serverless Devs 应用，由于应用中会存在需要初始化才可运行的变量（例如应用部署地区、函数名等等），所以**不推荐**直接 Clone 本仓库到本地进行部署或直接复制 s.yaml 使用，**强烈推荐**通过 `s init ${模版名称}` 的方法或应用中心进行初始化，详情可参考[部署 & 体验](#部署--体验) 。
 
-# start-koa-v3 帮助文档
-<p align="center" class="flex justify-center">
-    <a href="https://www.serverless-devs.com" class="ml-1">
-    <img src="http://editor.devsapp.cn/icon?package=start-koa-v3&type=packageType">
-  </a>
-  <a href="http://www.devsapp.cn/details.html?name=start-koa-v3" class="ml-1">
-    <img src="http://editor.devsapp.cn/icon?package=start-koa-v3&type=packageVersion">
-  </a>
-  <a href="http://www.devsapp.cn/details.html?name=start-koa-v3" class="ml-1">
-    <img src="http://editor.devsapp.cn/icon?package=start-koa-v3&type=packageDownload">
-  </a>
-</p>
+# start-koa-cap 帮助文档
 
 <description>
 
@@ -20,16 +9,7 @@ Koa 是一个新的 web 框架，由 Express 幕后的原班人马打造， 致�
 
 </description>
 
-<codeUrl>
 
-
-
-</codeUrl>
-<preview>
-
-
-
-</preview>
 
 
 ## 前期准备
@@ -62,18 +42,11 @@ Koa 是一个新的 web 框架，由 Express 幕后的原班人马打造， 致�
 
 <appcenter>
    
-- :fire: 通过 [Serverless 应用中心](https://fcnext.console.aliyun.com/applications/create?template=start-koa-v3) ，
-  [![Deploy with Severless Devs](https://img.alicdn.com/imgextra/i1/O1CN01w5RFbX1v45s8TIXPz_!!6000000006118-55-tps-95-28.svg)](https://fcnext.console.aliyun.com/applications/create?template=start-koa-v3) 该应用。
+- :fire: 通过 [云原生应用开发平台 CAP](https://devs.console.aliyun.com/applications/create?template=start-koa-cap) ，
+  [![Deploy with Severless Devs](https://img.alicdn.com/imgextra/i1/O1CN01w5RFbX1v45s8TIXPz_!!6000000006118-55-tps-95-28.svg)](https://devs.console.aliyun.com/applications/create?template=start-koa-cap) 该应用。
    
 </appcenter>
-<deploy>
-    
-- 通过 [Serverless Devs Cli](https://www.serverless-devs.com/serverless-devs/install) 进行部署：
-  - [安装 Serverless Devs Cli 开发者工具](https://www.serverless-devs.com/serverless-devs/install) ，并进行[授权信息配置](https://docs.serverless-devs.com/fc/config) ；
-  - 初始化项目：`s init start-koa-v3 -d start-koa-v3`
-  - 进入项目，并进行项目部署：`cd start-koa-v3 && s deploy -y`
-   
-</deploy>
+
 
 ## 案例介绍
 
@@ -87,7 +60,7 @@ Koa.js 是一个现代化的Node.js web框架，通过利用 async 函数，它�
 
 在GitHub上，Koa 由于其优雅的设计和高效的处理方式，得到了开发社区的高度评价和广泛的关注，拥有34.8k stars。许多初创公司和企业选择 Koa 作为他们构建 RESTful API 和服务端应用的基础，因为它允许他们以非常直观的方式构建功能和处理请求。
 
-当开发者将 Koa 应用部署到 Serverless 开发平台时，他们可以充分利用云平台的扩展性和按需计费的优势，而无需担心底层基础设施的维护工作。这种架构让开发者能够专注于编码和业务逻辑，而将运维复杂性交给云服务提供商。Koa.js 的轻量化设计特别适合Serverless架构，使其成为现代Web开发中高效开发的理想选择。
+当开发者将 Koa 应用部署到云原生应用开发平台 CAP时，他们可以充分利用云平台的扩展性和按需计费的优势，而无需担心底层基础设施的维护工作。这种架构让开发者能够专注于编码和业务逻辑，而将运维复杂性交给云服务提供商。Koa.js 的轻量化设计特别适合Serverless架构，使其成为现代Web开发中高效开发的理想选择。
 
 </appdetail>
 
@@ -105,7 +78,7 @@ Koa.js 是一个现代化的Node.js web框架，通过利用 async 函数，它�
 ![图片alt](https://img.alicdn.com/imgextra/i2/O1CN010YYmHs1GKg8sK5WqU_!!6000000000604-0-tps-2298-1314.jpg)
 
 ### 二次开发
-您可以通过页面上的云端开发功能，在线进行二次开发。如您之前是在本地创建项目，也可以在本地的项目目录`start-koa-v3`下，对项目进行二次开发。在完成开发后，您可以通过`s deploy`命令重新部署该项目并进行查看。
+您可以通过页面上的云端开发功能，在线进行二次开发。如您之前是在本地创建项目，也可以在本地的项目目录`start-koa-cap`下，对项目进行二次开发。在完成开发后，您可以通过`s deploy`命令重新部署该项目并进行查看。
 
 </usedetail>
 
@@ -113,19 +86,3 @@ Koa.js 是一个现代化的Node.js web框架，通过利用 async 函数，它�
 
 <matters id="flushContent">
 </matters>
-
-
-<devgroup>
-
-
-## 开发者社区
-
-您如果有关于错误的反馈或者未来的期待，您可以在 [Serverless Devs repo Issues](https://github.com/serverless-devs/serverless-devs/issues) 中进行反馈和交流。如果您想要加入我们的讨论组或者了解 FC 组件的最新动态，您可以通过以下渠道进行：
-
-<p align="center">  
-
-| <img src="https://serverless-article-picture.oss-cn-hangzhou.aliyuncs.com/1635407298906_20211028074819117230.png" width="130px" > | <img src="https://serverless-article-picture.oss-cn-hangzhou.aliyuncs.com/1635407044136_20211028074404326599.png" width="130px" > | <img src="https://serverless-article-picture.oss-cn-hangzhou.aliyuncs.com/1635407252200_20211028074732517533.png" width="130px" > |
-| --------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------- |
-| <center>微信公众号：`serverless`</center>                                                                                         | <center>微信小助手：`xiaojiangwh`</center>                                                                                        | <center>钉钉交流群：`33947367`</center>                                                                                           |
-</p>
-</devgroup>
