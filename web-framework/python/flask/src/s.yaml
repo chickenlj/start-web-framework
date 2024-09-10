@@ -38,7 +38,8 @@ resources:
         TZ: Asia/Shanghai
         CHAT_API_URL: '{{ chat_api_url }}'
         CHAT_API_TOKEN: '{{ chat_api_token }}'
-        PROJECT_NAME: env('ALIYUN_DEVS_REMOTE_PROJECT_NAME')
+        PROJECT_NAME: ${env('ALIYUN_DEVS_REMOTE_PROJECT_NAME')}
+        XX_NAME: ${env('ALIYUN_DEVS_REMOTE_PROJECT_NAME')}_XX
       functionName: ${vars.functionName}
       code: ./code
       layers:
