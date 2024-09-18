@@ -30,6 +30,7 @@ resources:
         PATH: "/opt/java17/bin:/usr/local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/opt/bin"
         JAVA_HOME: "/opt/java17"
       instanceConcurrency: 100
+      timeout: 20
       customRuntimeConfig:
         port: 9000
         command:
