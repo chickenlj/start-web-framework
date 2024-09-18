@@ -37,7 +37,7 @@ public class FlightBookingService {
             Customer customer = new Customer();
             customer.setName(name);
 
-            LocalDate date = LocalDate.now().plusDays(2*i);
+            LocalDate date = LocalDate.now().plusDays(2*(i+1));
 
             Booking booking = new Booking("10" + (i + 1), date, customer, BookingStatus.CONFIRMED, from, to, bookingClass);
             customer.getBookings().add(booking);
