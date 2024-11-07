@@ -12,16 +12,15 @@ import org.springframework.ai.vectorstore.VectorStore;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean;
 import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.context.annotation.Bean;
 import org.springframework.core.io.Resource;
+import org.springframework.web.client.RestClient;
 
-import com.vaadin.flow.component.page.AppShellConfigurator;
-import com.vaadin.flow.theme.Theme;
 
 @SpringBootApplication
-@Theme(value = "customer-support-agent")
-public class Application implements AppShellConfigurator {
+public class Application  {
 
 	private static final Logger logger = LoggerFactory.getLogger(Application.class);
 
@@ -32,15 +31,12 @@ public class Application implements AppShellConfigurator {
 	// In the real world, ingesting documents would often happen separately, on a CI
 	// server or similar.
 	@Bean
-	CommandLineRunner ingestTermOfServiceToVectorStore(
-			EmbeddingModel embeddingModel, VectorStore vectorStore,
+	CommandLineRunner ingestTermOfServiceToVectorStore(EmbeddingModel embeddingModel, VectorStore vectorStore,
 			@Value("classpath:rag/terms-of-service.txt") Resource termsOfServiceDocs) {
 
 		return args -> {
 			// Ingest the document into the vector store
-			vectorStore.write(
-					new TokenTextSplitter().transform(
-							new TextReader(termsOfServiceDocs).read()));
+			vectorStore.write(new TokenTextSplitter().transform(new TextReader(termsOfServiceDocs).read()));
 
 			vectorStore.similaritySearch("Cancelling Bookings").forEach(doc -> {
 				logger.info("Similar Document: {}", doc.getContent());
@@ -56,5 +52,11 @@ public class Application implements AppShellConfigurator {
 	@Bean
 	public ChatMemory chatMemory() {
 		return new InMemoryChatMemory();
+	}
+
+	@Bean
+	@ConditionalOnMissingBean
+	public RestClient.Builder restClientBuilder() {
+		return RestClient.builder();
 	}
 }
