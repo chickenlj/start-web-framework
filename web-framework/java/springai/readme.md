@@ -52,7 +52,7 @@
 
 <appdetail id="flushContent">
 
-本案例提供了一个基于 Spring AI Alibaba 框架开发的 AI 智能机票助手，您可以与智能助手聊天，进行机票预定、改期、退票、咨询等服务。应用底层使用阿里云通义模型服务，是一个使用了 RAG、Function Calling、ChatMemory 等核心能力的智能体应用，支持多轮聊天会话。
+本案例提供了一个基于 Spring AI Alibaba 框架开发的 AI 智能机票助手，您可以与智能助手聊天，机票助手实际能够完成的具体任务包括：查询机票预定详情、更改预订、取消预订。应用底层使用阿里云通义模型服务，是一个使用了 RAG、Function Calling、ChatMemory 等核心能力的智能体应用，支持多轮聊天会话。
 
 Spring AI Alibaba 开源项目基于 Spring AI 构建，是阿里云通义系列模型及服务在 Java AI 应用开发领域的最佳实践，提供高层次的 AI API 抽象与云原生基础设施集成方案，旨在帮助开发者快速构建 AI 应用。使用 Spring AI Alibaba 开发应用与使用普通 Spring Boot 没有什么区别，只需要增加 `spring-ai-alibaba-starter` 依赖，将 `ChatClient` Bean 注入就可以实现与模型聊天了。
 
@@ -68,7 +68,7 @@ Spring AI Alibaba 开源项目基于 Spring AI 构建，是阿里云通义系列
 
 ![图片alt](https://foruda.gitee.com/images/1726307880404008922/9b99200b_1689212.png)
 
-2. 与智能助手开始聊天，以自然语言对话的方式说出您想要的咨询的问题或要办理的业务，并等待助手回复。
+2. 与智能助手开始聊天，以自然语言对话的方式说出您想要的咨询的问题或要办理的业务（仅限查询机票预定详情、更改预订、取消预订），并等待助手回复。
 
 
 </usedetail>
