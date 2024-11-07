@@ -3,7 +3,7 @@ Type: Project
 Name: start-springaialibaba-hk-cap
 Provider:
   - 阿里云
-Version: 0.0.1
+Version: dev
 Description: 本案例提供了一个基于 Spring AI Alibaba 框架开发的 AI 智能机票助手，您可以将应用部署到阿里云函数计算 FC 上快速体验运行效果。
 HomePage: https://github.com/devsapp/start-web-framework/tree/dipper/web-framework/java/springai
 Organization: 阿里云函数计算（FC）
