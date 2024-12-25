@@ -1,5 +1,7 @@
 package ai.spring.demo.ai.playground;
 
+import io.opentelemetry.api.GlobalOpenTelemetry;
+import io.opentelemetry.api.OpenTelemetry;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.ai.chat.memory.ChatMemory;
@@ -16,10 +18,12 @@ import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean
 import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.context.annotation.Bean;
 import org.springframework.core.io.Resource;
+import org.springframework.scheduling.annotation.EnableScheduling;
 import org.springframework.web.client.RestClient;
 
 
 @SpringBootApplication
+@EnableScheduling
 public class Application  {
 
 	private static final Logger logger = LoggerFactory.getLogger(Application.class);
@@ -58,5 +62,10 @@ public class Application  {
 	@ConditionalOnMissingBean
 	public RestClient.Builder restClientBuilder() {
 		return RestClient.builder();
+	}
+
+	@Bean
+	public OpenTelemetry getAgentOpenTelemetry() {
+		return GlobalOpenTelemetry.get();
 	}
 }

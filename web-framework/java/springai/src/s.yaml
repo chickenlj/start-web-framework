@@ -34,10 +34,12 @@ resources:
       customRuntimeConfig:
         port: 9000
         command:
-          - java
+          - bash
         args:
-          - -jar
-          - target/playground-flight-booking-0.0.1-SNAPSHOT.jar
+          - ./start.sh
+          - {{ armsLicenseKey }}
+          - {{ functionName }}
+          - ${vars.region}
       functionName: "{{ functionName }}"
       code: ./code
       logConfig: auto
@@ -51,6 +53,16 @@ resources:
               - POST
               - PUT
               - DELETE
+      provisionConfig:
+        scheduledActions: []
+        defaultTarget: 1
+        currentError: ''
+        current: 0
+        alwaysAllocateCPU: false
+        alwaysAllocateGPU: false
+        targetTrackingPolicies: [ ]
+        functionArn: acs:fc:cn-hangzhou:official:layers/Java17/versions/2
+        target: 1
       customDomain:
         domainName: auto
         protocol: HTTP
