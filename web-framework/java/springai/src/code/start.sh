@@ -11,4 +11,4 @@ java -javaagent:aliyun-java-agent.jar \
 -Darms.appName=${functionName}-fc \
 -Daliyun.javaagent.regionId=${region} \
 -jar \
-target/playground-flight-booking-example-0.0.1-SNAPSHOT.jar
+target/playground-flight-booking-example.jar
